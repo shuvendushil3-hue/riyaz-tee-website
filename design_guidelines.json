@@ -1,0 +1,98 @@
+{
+  "theme_and_archetype": {
+    "domain": "E-commerce (Apparel / Niche Music)",
+    "theme": "Dark",
+    "archetype": "Archetype 4 (Swiss & High-Contrast) customized with Yellow/Orange accents",
+    "vibe": "Rhythmic, intense, focused, artistic, premium"
+  },
+  "typography": {
+    "fonts": {
+      "headings": "Cabinet Grotesk",
+      "body": "Manrope",
+      "mono": "JetBrains Mono"
+    },
+    "rules": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl tracking-tighter font-black",
+      "h2": "text-2xl sm:text-3xl lg:text-4xl tracking-tight font-bold",
+      "h3": "text-xl sm:text-2xl font-bold",
+      "body": "text-base leading-relaxed text-neutral-300",
+      "labels": "text-xs tracking-[0.2em] uppercase font-bold text-yellow-400"
+    }
+  },
+  "colors": {
+    "background": {
+      "default": "#0a0a0a",
+      "surface": "#171717",
+      "surface_hover": "#262626"
+    },
+    "brand": {
+      "primary": "#facc15",
+      "primary_hover": "#eab308",
+      "secondary": "#f97316",
+      "accent": "#f59e0b"
+    },
+    "text": {
+      "primary": "#fafafa",
+      "secondary": "#a3a3a3",
+      "inverse": "#0a0a0a"
+    },
+    "border": {
+      "default": "#262626",
+      "focus": "#facc15"
+    }
+  },
+  "spacing_and_layout": {
+    "container": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+    "padding": "generous (py-24 or py-32 for sections)",
+    "grid": {
+      "marketing": "grid-cols-1 md:grid-cols-12 gap-8 to gap-12",
+      "product_catalog": "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12"
+    },
+    "radius": "rounded-none or max rounded-sm (2px to 4px) for a sharp, edgy look"
+  },
+  "surface_strategies": {
+    "header": "Solid #0a0a0a or Crystal Glass (bg-black/80 backdrop-blur-xl border-b border-white/10)",
+    "product_cards": "Cardless design. Image is edge-to-edge in its container, text directly below without borders or shadows. Hover effect on image (scale up 105%).",
+    "admin_dashboard": "Flat backgrounds, 1px subtle border (#262626), no shadows. Technical look.",
+    "buttons": "Primary CTA: bg-yellow-400 text-black hover:bg-yellow-500 rounded-sm font-bold tracking-tight."
+  },
+  "media_and_images": {
+    "hero_background": {
+      "url": "https://images.unsplash.com/photo-1721179389414-8c3f507e2bc2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTZ8MHwxfHNlYXJjaHwyfHxtdXNpYyUyMHByYWN0aWNlfGVufDB8fHx8MTc3NDY5MDk1N3ww&ixlib=rb-4.1.0&q=85",
+      "description": "Black and white photo of a drummer, evocative of rhythmic practice (Riyaz)",
+      "usage": "Hero section background with heavy black gradient overlay (bg-black/70 to transparent) so text remains readable."
+    },
+    "product_tabla_tee": {
+      "url": "https://images.unsplash.com/photo-1657364891013-8324e4db9dc9?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzV8MHwxfHNlYXJjaHwyfHxibGFjayUyMHQtc2hpcnR8ZW58MHx8fHwxNzc0NjkwOTU2fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Black T-Shirt mockup",
+      "usage": "Main product 1 - e.g., 'The Riyaz Dark Tee'"
+    },
+    "product_riyaz_tee": {
+      "url": "https://images.unsplash.com/photo-1620799139507-2a76f79a2f4d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjd8MHwxfHNlYXJjaHwzfHx3aGl0ZSUyMHQtc2hpcnR8ZW58MHx8fHwxNzc0NjkwOTU2fDA&ixlib=rb-4.1.0&q=85",
+      "description": "White T-Shirt mockup",
+      "usage": "Main product 2 - e.g., 'The Riyaz Light Tee'"
+    },
+    "category_tabla_instrument": {
+      "url": "https://images.unsplash.com/photo-1524392749318-209b690c93c6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NDh8MHwxfHNlYXJjaHwyfHx0YWJsYSUyMGluc3RydW1lbnR8ZW58MHx8fHwxNzc0NjkwOTUwfDA&ixlib=rb-4.1.0&q=85",
+      "description": "Man playing tabla instrument",
+      "usage": "About us or 'The Inspiration' section visual"
+    }
+  },
+  "component_instructions": {
+    "data_testid_rule": "ALL interactive elements MUST have data-testid. Examples: 'add-to-cart-button', 'size-selector-m', 'checkout-submit-button'.",
+    "icons": "Use lucide-react (default). Size 20px for regular buttons.",
+    "animation": "Subtle hover states on buttons. Image zoom-in on hover for product catalog. Staggered fade-up for product lists.",
+    "shadcn_overrides": "Override Shadcn default styles to match the dark theme and sharp edges (rounded-sm instead of rounded-md/lg). For inputs, use bg-[#171717] border-[#262626] focus-visible:ring-yellow-400."
+  },
+  "instructions_to_main_agent": [
+    "1. Setup Tailwind config for Dark Mode ONLY (bg-[#0a0a0a], text-[#fafafa]). Override standard colors with the palette provided.",
+    "2. Add fonts 'Cabinet Grotesk' and 'Manrope' via Google Fonts or standard imports. Use Cabinet Grotesk for all headings. Note: Keep using .js/.jsx extensions instead of .tsx where applicable based on existing config.",
+    "3. Build the Landing Page: A highly emotional hero section using the 'hero_background' image with a heavy black overlay. Headline e.g., 'THE RHYTHM OF DEDICATION'. CTA: 'Shop Riyaz Tee'.",
+    "4. Product Catalog: Cardless grid. Each item has an image (aspect-[4/5]), title (Manrope, bold), price (text-yellow-400). Hovering the image zooms it slightly.",
+    "5. Product Page (PDP): Large split layout. Left side: Image gallery. Right side: Title, Price, Size Selection (S/M/L/XL/XXL using Shadcn Radio Group or Toggle Group), Add to Cart button (Yellow, full width), and Reviews section.",
+    "6. Checkout: Integrate Razorpay (mocked or actual UI if keys not provided) for payment. Use Shadcn forms for shipping details.",
+    "7. Auth & Accounts: Login/Register pages and Order History dashboard for users.",
+    "8. Admin Panel: Dashboard layout (Archetype 4) to manage products (Add/Edit) and inventory. Dark, sterile, data-heavy, table-driven.",
+    "9. Ensure every single interactive component, form, and button has a 'data-testid' attached for automated testing."
+  ]
+}
