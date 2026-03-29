@@ -16,31 +16,31 @@ export const Navbar = () => {
   return (
     <nav className="sticky top-0 z-50 bg-black/80 backdrop-blur-xl border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          <Link to="/" className="flex items-center space-x-3">
+        <div className="flex items-center justify-between h-24">
+          <Link to="/" className="flex items-center">
             <img 
               src="https://customer-assets.emergentagent.com/job_rhythm-wear-2/artifacts/tw31gjxy_logo3.png" 
               alt="Riyaz Tee" 
-              className="h-16 w-auto"
+              className="h-20 w-auto"
               data-testid="navbar-logo"
             />
           </Link>
 
-          <div className="flex items-center space-x-6">
-            <Link to="/products" className="text-sm font-medium text-neutral-300 hover:text-yellow-400 transition-colors" data-testid="nav-products-link">
+          <div className="flex items-center space-x-8">
+            <Link to="/products" className="text-sm font-semibold text-neutral-300 hover:text-yellow-400 transition-colors tracking-wide" data-testid="nav-products-link">
               PRODUCTS
             </Link>
             
-            <Link to="/about" className="text-sm font-medium text-neutral-300 hover:text-yellow-400 transition-colors" data-testid="nav-about-link">
+            <Link to="/about" className="text-sm font-semibold text-neutral-300 hover:text-yellow-400 transition-colors tracking-wide" data-testid="nav-about-link">
               ABOUT
             </Link>
             
-            <Link to="/contact" className="text-sm font-medium text-neutral-300 hover:text-yellow-400 transition-colors" data-testid="nav-contact-link">
+            <Link to="/contact" className="text-sm font-semibold text-neutral-300 hover:text-yellow-400 transition-colors tracking-wide" data-testid="nav-contact-link">
               CONTACT
             </Link>
             
             {user && user._id && user.role === 'admin' && (
-              <Link to="/admin" className="text-sm font-medium text-neutral-300 hover:text-yellow-400 transition-colors" data-testid="nav-admin-link">
+              <Link to="/admin" className="text-sm font-semibold text-neutral-300 hover:text-yellow-400 transition-colors tracking-wide" data-testid="nav-admin-link">
                 ADMIN
               </Link>
             )}
@@ -60,7 +60,7 @@ export const Navbar = () => {
               </div>
             ) : (
               <Link to="/login" data-testid="nav-login-link">
-                <button className="btn-gradient px-6 py-2 text-sm" data-testid="login-button">
+                <button className="btn-gradient px-6 py-3 text-sm" data-testid="login-button">
                   <User className="w-4 h-4 mr-2 inline" />
                   LOGIN
                 </button>

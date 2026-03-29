@@ -34,18 +34,18 @@ export const HomePage = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black" />
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="space-y-6">
-            <div className="text-xs tracking-[0.2em] uppercase font-bold text-yellow-400" data-testid="hero-label">
+          <div className="space-y-8">
+            <div className="text-xs tracking-[0.3em] uppercase font-bold text-yellow-400" data-testid="hero-label">
               RIYAZ TEE COLLECTION
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl tracking-tighter font-black text-white leading-tight" data-testid="hero-title">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-tight" data-testid="hero-title">
               THE RHYTHM OF<br />DEDICATION
             </h1>
-            <p className="text-base leading-relaxed text-neutral-300 max-w-2xl mx-auto" data-testid="hero-description">
+            <p className="text-lg leading-relaxed text-neutral-300 max-w-3xl mx-auto" data-testid="hero-description">
               Wear your passion for music. Supporting young and emerging tabla artists through our platform and merchandise.
             </p>
             <Link to="/products">
-              <button className="btn-gradient px-8 py-4 text-lg" data-testid="hero-cta-button">
+              <button className="btn-gradient px-10 py-4 text-base mt-4" data-testid="hero-cta-button">
                 SHOP RIYAZ TEE
                 <ArrowRight className="ml-2 w-5 h-5 inline" />
               </button>

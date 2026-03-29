@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;900&family=Manrope:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -34,30 +34,36 @@
     @apply border-border;
   }
   body {
-    @apply bg-[#0a0a0a] text-[#fafafa] font-body;
+    @apply bg-[#0a0a0a] text-[#fafafa];
     margin: 0;
+    font-family: 'Montserrat', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.02em;
+    line-height: 1.6;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
   }
 }
 
 /* Gradient Button Styles */
 @layer components {
   .btn-gradient {
-    @apply bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-500 text-black font-bold rounded-full;
-    @apply hover:from-yellow-500 hover:via-orange-500 hover:to-yellow-600;
+    @apply bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-500 text-white font-bold rounded-full;
+    @apply hover:from-yellow-500 hover:via-orange-500 hover:to-orange-600;
     @apply transition-all duration-300 transform hover:scale-105;
-    @apply shadow-lg hover:shadow-xl;
+    @apply shadow-lg hover:shadow-2xl;
   }
   
   .btn-gradient-green {
-    @apply bg-gradient-to-r from-green-400 via-emerald-500 to-green-500 text-white font-bold rounded-full;
-    @apply hover:from-green-500 hover:via-emerald-600 hover:to-green-600;
+    @apply bg-gradient-to-r from-emerald-400 via-green-500 to-teal-500 text-white font-bold rounded-full;
+    @apply hover:from-emerald-500 hover:via-green-600 hover:to-teal-600;
     @apply transition-all duration-300 transform hover:scale-105;
-    @apply shadow-lg hover:shadow-xl;
+    @apply shadow-lg hover:shadow-2xl;
   }
 }
 
