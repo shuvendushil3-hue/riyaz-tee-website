@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { Download } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Label } from '../components/ui/label';
@@ -26,6 +27,27 @@ export const LoginPage = () => {
     }
   };
 
+  const downloadCredentials = () => {
+    const credentials = `RIYAZ TEE - Admin Login Credentials\n\n` +
+      `Admin Email: admin@riyaztee.com\n` +
+      `Admin Password: admin123\n\n` +
+      `Role: Administrator\n\n` +
+      `Access: Product Management, Order Management\n\n` +
+      `Note: Please keep these credentials secure and do not share them.\n` +
+      `Generated on: ${new Date().toLocaleString()}`;
+    
+    const blob = new Blob([credentials], { type: 'text/plain' });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'riyaz-tee-admin-credentials.txt';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    window.URL.revokeObjectURL(url);
+    toast.success('Credentials downloaded!');
+  };
+
   return (
     <div className="min-h-screen bg-[#0a0a0a] flex items-center justify-center py-12 px-4" data-testid="login-page">
       <div className="max-w-md w-full space-y-8">
@@ -33,7 +55,7 @@ export const LoginPage = () => {
           <h1 className="text-4xl sm:text-5xl tracking-tighter font-black text-white mb-2" data-testid="login-title">
             Welcome Back
           </h1>
-          <p className="text-neutral-400" data-testid="login-subtitle">Login to continue shopping</p>
+          <p className="text-neutral-400" data-testid="login-subtitle">Login to access admin panel</p>
         </div>
 
         <form onSubmit={handleSubmit} className="bg-[#171717] p-8 rounded-sm space-y-6" data-testid="login-form">
@@ -73,6 +95,22 @@ export const LoginPage = () => {
           >
             {loading ? 'Logging in...' : 'LOGIN'}
           </Button>
+
+          <div className="pt-4 border-t border-[#262626]">
+            <Button
+              type="button"
+              onClick={downloadCredentials}
+              variant="outline"
+              className="w-full border-yellow-400/30 text-yellow-400 hover:bg-yellow-400/10 rounded-sm font-bold"
+              data-testid="download-credentials-button"
+            >
+              <Download className="w-4 h-4 mr-2" />
+              Download Admin Credentials
+            </Button>
+            <p className="text-xs text-center text-neutral-500 mt-2">
+              For admin access only
+            </p>
+          </div>
 
           <p className="text-center text-neutral-400 text-sm">
             Don't have an account?{' '}

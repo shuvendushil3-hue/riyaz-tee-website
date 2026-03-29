@@ -24,12 +24,12 @@ export const HomePage = () => {
 
   return (
     <div className="min-h-screen bg-[#0a0a0a]" data-testid="home-page">
-      {/* Hero Section */}
+      {/* Hero Section with Pure Tabla Image */}
       <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'url(https://customer-assets.emergentagent.com/job_rhythm-wear-2/artifacts/ms0c27dc_a7.jpg)'
+            backgroundImage: 'url(https://images.unsplash.com/photo-1592251615117-33939d5b29fb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzl8MHwxfHNlYXJjaHwzfHx0YWJsYSUyMGRydW1zJTIwaW5kaWFuJTIwcGVyY3Vzc2lvbiUyMGluc3RydW1lbnQlMjBjbG9zZSUyMHVwfGVufDB8fHx8MTc3NDgwNTcxOXww&ixlib=rb-4.1.0&q=85)'
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black" />
@@ -43,7 +43,7 @@ export const HomePage = () => {
               THE RHYTHM OF<br />DEDICATION
             </h1>
             <p className="text-base leading-relaxed text-neutral-300 max-w-2xl mx-auto" data-testid="hero-description">
-              Wear your passion for music. Inspired by the art of tabla and the discipline of practice, each piece celebrates the journey of mastery.
+              Wear your passion for music. Supporting young and emerging tabla artists through our platform and merchandise.
             </p>
             <Link to="/products">
               <Button className="bg-yellow-400 text-black hover:bg-yellow-500 rounded-sm font-bold px-8 py-6 text-base" data-testid="hero-cta-button">
@@ -86,8 +86,8 @@ export const HomePage = () => {
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="py-24 bg-[#171717]" data-testid="about-section">
+      {/* Mission Section */}
+      <section className="py-24 bg-[#171717]" data-testid="mission-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
@@ -98,16 +98,21 @@ export const HomePage = () => {
               />
             </div>
             <div className="space-y-6">
-              <div className="text-xs tracking-[0.2em] uppercase font-bold text-yellow-400">THE INSPIRATION</div>
+              <div className="text-xs tracking-[0.2em] uppercase font-bold text-yellow-400">OUR MISSION</div>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl tracking-tight font-bold text-white">
-                Born from the Beat
+                Supporting Tabla Artists
               </h2>
               <p className="text-base leading-relaxed text-neutral-300">
-                Riyaz - the practice, the dedication, the pursuit of perfection. Our collection draws inspiration from the tabla, the heartbeat of Indian classical music, and the countless hours musicians dedicate to their craft.
+                We run a Tabla Recitation Channel dedicated to promoting artists, especially young and emerging tabla players. Our mission is to support and showcase talent through our platform.
               </p>
               <p className="text-base leading-relaxed text-neutral-300">
-                Each tee is designed for those who understand that mastery isn't a destination, but a daily practice. Wear your commitment.
+                Each piece we create celebrates the journey of mastery and the dedication to the art of tabla. When you wear Riyaz Tee, you're supporting the next generation of artists.
               </p>
+              <Link to="/about">
+                <Button className="bg-yellow-400 text-black hover:bg-yellow-500 rounded-sm font-bold">
+                  Learn More About Us
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

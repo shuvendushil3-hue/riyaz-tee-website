@@ -19,9 +19,9 @@ export const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center space-x-3">
             <img 
-              src="https://customer-assets.emergentagent.com/job_rhythm-wear-2/artifacts/oxh71qg5_riyaz%20tee%20logo.png" 
+              src="https://customer-assets.emergentagent.com/job_rhythm-wear-2/artifacts/haofyggr_logo.png" 
               alt="Riyaz Tee" 
-              className="h-10 w-auto"
+              className="h-12 w-auto"
               data-testid="navbar-logo"
             />
           </Link>
@@ -29,6 +29,14 @@ export const Navbar = () => {
           <div className="flex items-center space-x-6">
             <Link to="/products" className="text-sm font-medium text-neutral-300 hover:text-yellow-400 transition-colors" data-testid="nav-products-link">
               PRODUCTS
+            </Link>
+            
+            <Link to="/about" className="text-sm font-medium text-neutral-300 hover:text-yellow-400 transition-colors" data-testid="nav-about-link">
+              ABOUT
+            </Link>
+            
+            <Link to="/contact" className="text-sm font-medium text-neutral-300 hover:text-yellow-400 transition-colors" data-testid="nav-contact-link">
+              CONTACT
             </Link>
             
             {user && user._id && user.role === 'admin' && (

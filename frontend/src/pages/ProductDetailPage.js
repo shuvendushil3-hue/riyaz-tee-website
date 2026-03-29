@@ -57,7 +57,7 @@ export const ProductDetailPage = () => {
       return;
     }
 
-    const message = `Hi! I want to order:\n\n${product.name}\nSize: ${selectedSize}\nPrice: ₹${product.price}`;
+    const message = `Hi! I want to order:\n\n*${product.name}*\nSize: ${selectedSize}\nPrice: ₹${product.price}\n\nPlease confirm availability and shipping details.`;
     const whatsappUrl = `https://wa.me/918509643203?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -177,7 +177,7 @@ export const ProductDetailPage = () => {
               <MessageCircle className="w-5 h-5 mr-2" />
               ORDER VIA WHATSAPP
             </Button>
-            <p className="text-center text-xs text-neutral-500">Click to chat with us on WhatsApp and place your order</p>
+            <p className="text-center text-xs text-neutral-500">Chat with us on WhatsApp: +91 8509643203</p>
           </div>
         </div>
 
