@@ -10,7 +10,7 @@ export const Footer = () => {
           {/* About */}
           <div>
             <img 
-              src="https://customer-assets.emergentagent.com/job_rhythm-wear-2/artifacts/tw31gjxy_logo3.png" 
+              src="https://customer-assets.emergentagent.com/job_rhythm-wear-2/artifacts/eploke4p_logo3.png" 
               alt="Riyaz Tee" 
               className="h-20 w-auto mb-6"
             />

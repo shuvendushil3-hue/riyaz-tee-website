@@ -19,7 +19,7 @@ export const Navbar = () => {
         <div className="flex items-center justify-between h-24">
           <Link to="/" className="flex items-center">
             <img 
-              src="https://customer-assets.emergentagent.com/job_rhythm-wear-2/artifacts/tw31gjxy_logo3.png" 
+              src="https://customer-assets.emergentagent.com/job_rhythm-wear-2/artifacts/eploke4p_logo3.png" 
               alt="Riyaz Tee" 
               className="h-20 w-auto"
               data-testid="navbar-logo"
