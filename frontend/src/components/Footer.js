@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Youtube, Facebook, Instagram, Mail, Phone } from 'lucide-react';
+import { Youtube, Facebook, Instagram, Mail } from 'lucide-react';
 
 export const Footer = () => {
   return (
@@ -10,9 +10,9 @@ export const Footer = () => {
           {/* About */}
           <div>
             <img 
-              src="https://customer-assets.emergentagent.com/job_rhythm-wear-2/artifacts/haofyggr_logo.png" 
+              src="https://customer-assets.emergentagent.com/job_rhythm-wear-2/artifacts/tw31gjxy_logo3.png" 
               alt="Riyaz Tee" 
-              className="h-12 w-auto mb-4"
+              className="h-16 w-auto mb-4"
             />
             <p className="text-sm text-neutral-400 leading-relaxed">
               Promoting young and emerging tabla artists through our platform and merchandise.
@@ -74,20 +74,11 @@ export const Footer = () => {
             <h3 className="text-white font-bold mb-4">Contact</h3>
             <div className="space-y-3">
               <a 
-                href="https://wa.me/918509643203" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center space-x-2 text-sm text-neutral-400 hover:text-yellow-400 transition-colors"
-              >
-                <Phone className="w-5 h-5" />
-                <span>+91 8509643203</span>
-              </a>
-              <a 
-                href="mailto:contact@riyaztee.com" 
+                href="mailto:shuvendushil3@gmail.com" 
                 className="flex items-center space-x-2 text-sm text-neutral-400 hover:text-yellow-400 transition-colors"
               >
                 <Mail className="w-5 h-5" />
-                <span>Contact via Email</span>
+                <span>shuvendushil3@gmail.com</span>
               </a>
             </div>
           </div>

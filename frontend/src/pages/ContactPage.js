@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MessageCircle, Youtube, Facebook, Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import { MessageCircle, Youtube, Facebook, Instagram, Mail } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Label } from '../components/ui/label';
@@ -47,7 +47,7 @@ export const ContactPage = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className="bg-[#171717] p-8 rounded-sm">
+          <div className="bg-[#171717] p-8 rounded-2xl">
             <h2 className="text-2xl font-bold text-white mb-6">Send Us a Message</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
@@ -57,7 +57,7 @@ export const ContactPage = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="mt-2 bg-[#0a0a0a] border-[#262626] text-white focus-visible:ring-yellow-400 rounded-sm"
+                  className="mt-2 bg-[#0a0a0a] border-[#262626] text-white focus-visible:ring-yellow-400 rounded-xl"
                   placeholder="Your name"
                   required
                 />
@@ -71,7 +71,7 @@ export const ContactPage = () => {
                   type="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="mt-2 bg-[#0a0a0a] border-[#262626] text-white focus-visible:ring-yellow-400 rounded-sm"
+                  className="mt-2 bg-[#0a0a0a] border-[#262626] text-white focus-visible:ring-yellow-400 rounded-xl"
                   placeholder="your@email.com"
                   required
                 />
@@ -84,7 +84,7 @@ export const ContactPage = () => {
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  className="mt-2 bg-[#0a0a0a] border-[#262626] text-white focus-visible:ring-yellow-400 rounded-sm"
+                  className="mt-2 bg-[#0a0a0a] border-[#262626] text-white focus-visible:ring-yellow-400 rounded-xl"
                   placeholder="How can we help?"
                   required
                 />
@@ -97,20 +97,20 @@ export const ContactPage = () => {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  className="mt-2 bg-[#0a0a0a] border-[#262626] text-white focus-visible:ring-yellow-400 rounded-sm"
+                  className="mt-2 bg-[#0a0a0a] border-[#262626] text-white focus-visible:ring-yellow-400 rounded-xl"
                   placeholder="Tell us more..."
                   rows={5}
                   required
                 />
               </div>
 
-              <Button
+              <button
                 type="submit"
-                className="w-full bg-[#25D366] text-white hover:bg-[#20BA5A] rounded-sm font-bold py-6"
+                className="btn-gradient-green w-full py-4"
               >
-                <MessageCircle className="w-5 h-5 mr-2" />
+                <MessageCircle className="w-5 h-5 mr-2 inline" />
                 SEND VIA WHATSAPP
-              </Button>
+              </button>
               <p className="text-xs text-center text-neutral-500">Your message will open in WhatsApp</p>
             </form>
           </div>
@@ -118,41 +118,26 @@ export const ContactPage = () => {
           {/* Contact Information */}
           <div className="space-y-8">
             {/* Quick Contact */}
-            <div className="bg-[#171717] p-8 rounded-sm">
+            <div className="bg-[#171717] p-8 rounded-2xl">
               <h3 className="text-xl font-bold text-white mb-6">Quick Contact</h3>
               <div className="space-y-4">
                 <a 
-                  href="https://wa.me/918509643203" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
+                  href="mailto:shuvendushil3@gmail.com" 
                   className="flex items-center space-x-3 text-neutral-300 hover:text-yellow-400 transition-colors group"
                 >
-                  <div className="p-3 bg-[#0a0a0a] rounded-sm group-hover:bg-[#262626] transition-colors">
-                    <Phone className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-neutral-500">WhatsApp</p>
-                    <p className="font-bold">+91 8509643203</p>
-                  </div>
-                </a>
-
-                <a 
-                  href="mailto:contact@riyaztee.com" 
-                  className="flex items-center space-x-3 text-neutral-300 hover:text-yellow-400 transition-colors group"
-                >
-                  <div className="p-3 bg-[#0a0a0a] rounded-sm group-hover:bg-[#262626] transition-colors">
+                  <div className="p-3 bg-[#0a0a0a] rounded-xl group-hover:bg-[#262626] transition-colors">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
                     <p className="text-sm text-neutral-500">Email</p>
-                    <p className="font-bold">contact@riyaztee.com</p>
+                    <p className="font-bold">shuvendushil3@gmail.com</p>
                   </div>
                 </a>
               </div>
             </div>
 
             {/* Follow Us */}
-            <div className="bg-[#171717] p-8 rounded-sm">
+            <div className="bg-[#171717] p-8 rounded-2xl">
               <h3 className="text-xl font-bold text-white mb-6">Follow Us on Social Media</h3>
               <div className="space-y-4">
                 <a 
@@ -161,7 +146,7 @@ export const ContactPage = () => {
                   rel="noopener noreferrer"
                   className="flex items-center space-x-3 text-neutral-300 hover:text-yellow-400 transition-colors group"
                 >
-                  <div className="p-3 bg-[#0a0a0a] rounded-sm group-hover:bg-[#262626] transition-colors">
+                  <div className="p-3 bg-[#0a0a0a] rounded-xl group-hover:bg-[#262626] transition-colors">
                     <Youtube className="w-5 h-5 text-red-500" />
                   </div>
                   <div>
@@ -176,7 +161,7 @@ export const ContactPage = () => {
                   rel="noopener noreferrer"
                   className="flex items-center space-x-3 text-neutral-300 hover:text-yellow-400 transition-colors group"
                 >
-                  <div className="p-3 bg-[#0a0a0a] rounded-sm group-hover:bg-[#262626] transition-colors">
+                  <div className="p-3 bg-[#0a0a0a] rounded-xl group-hover:bg-[#262626] transition-colors">
                     <Facebook className="w-5 h-5 text-blue-500" />
                   </div>
                   <div>
@@ -191,7 +176,7 @@ export const ContactPage = () => {
                   rel="noopener noreferrer"
                   className="flex items-center space-x-3 text-neutral-300 hover:text-yellow-400 transition-colors group"
                 >
-                  <div className="p-3 bg-[#0a0a0a] rounded-sm group-hover:bg-[#262626] transition-colors">
+                  <div className="p-3 bg-[#0a0a0a] rounded-xl group-hover:bg-[#262626] transition-colors">
                     <Instagram className="w-5 h-5 text-pink-500" />
                   </div>
                   <div>
@@ -202,8 +187,8 @@ export const ContactPage = () => {
               </div>
             </div>
 
-            {/* Business Hours */}
-            <div className="bg-gradient-to-r from-yellow-400/10 to-orange-500/10 border border-yellow-400/20 p-8 rounded-sm">
+            {/* Response Time */}
+            <div className="bg-gradient-to-r from-yellow-400/10 to-orange-500/10 border border-yellow-400/20 p-8 rounded-2xl">
               <h3 className="text-xl font-bold text-white mb-4">Response Time</h3>
               <p className="text-neutral-300">
                 We typically respond within 24 hours on WhatsApp and email. For urgent inquiries, please contact us via WhatsApp.

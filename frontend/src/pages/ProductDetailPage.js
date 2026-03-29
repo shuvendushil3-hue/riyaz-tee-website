@@ -155,9 +155,9 @@ export const ProductDetailPage = () => {
                   <button
                     key={size}
                     onClick={() => setSelectedSize(size)}
-                    className={`px-6 py-3 rounded-sm font-bold transition-colors ${
+                    className={`px-6 py-3 rounded-full font-bold transition-all duration-300 transform hover:scale-105 ${
                       selectedSize === size
-                        ? 'bg-yellow-400 text-black'
+                        ? 'bg-gradient-to-r from-yellow-400 to-orange-400 text-black shadow-lg'
                         : 'bg-[#171717] text-neutral-300 hover:bg-[#262626]'
                     }`}
                     data-testid={`size-option-${size}`}
@@ -169,15 +169,15 @@ export const ProductDetailPage = () => {
             </div>
 
             {/* WhatsApp Order Button */}
-            <Button
+            <button
               onClick={handleOrderViaWhatsApp}
-              className="w-full bg-[#25D366] text-white hover:bg-[#20BA5A] rounded-sm font-bold py-6 text-base"
+              className="btn-gradient-green w-full py-6 text-base"
               data-testid="whatsapp-order-button"
             >
-              <MessageCircle className="w-5 h-5 mr-2" />
+              <MessageCircle className="w-5 h-5 mr-2 inline" />
               ORDER VIA WHATSAPP
-            </Button>
-            <p className="text-center text-xs text-neutral-500">Chat with us on WhatsApp: +91 8509643203</p>
+            </button>
+            <p className="text-center text-xs text-neutral-500">Chat with us on WhatsApp</p>
           </div>
         </div>
 
@@ -220,13 +220,13 @@ export const ProductDetailPage = () => {
                   data-testid="review-comment-input"
                 />
               </div>
-              <Button
+              <button
                 type="submit"
-                className="bg-yellow-400 text-black hover:bg-yellow-500 rounded-sm font-bold"
+                className="btn-gradient px-6 py-3"
                 data-testid="submit-review-button"
               >
                 Submit Review
-              </Button>
+              </button>
             </form>
           )}
 

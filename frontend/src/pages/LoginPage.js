@@ -58,7 +58,7 @@ export const LoginPage = () => {
           <p className="text-neutral-400" data-testid="login-subtitle">Login to access admin panel</p>
         </div>
 
-        <form onSubmit={handleSubmit} className="bg-[#171717] p-8 rounded-sm space-y-6" data-testid="login-form">
+        <form onSubmit={handleSubmit} className="bg-[#171717] p-8 rounded-2xl space-y-6" data-testid="login-form">
           <div>
             <Label htmlFor="email" className="text-neutral-300 font-bold">Email</Label>
             <Input
@@ -87,14 +87,14 @@ export const LoginPage = () => {
             />
           </div>
 
-          <Button
+          <button
             type="submit"
             disabled={loading}
-            className="w-full bg-yellow-400 text-black hover:bg-yellow-500 rounded-sm font-bold py-6"
+            className="btn-gradient w-full py-6"
             data-testid="login-submit-button"
           >
             {loading ? 'Logging in...' : 'LOGIN'}
-          </Button>
+          </button>
 
           <div className="pt-4 border-t border-[#262626]">
             <Button

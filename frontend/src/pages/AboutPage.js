@@ -1,6 +1,5 @@
 import React from 'react';
 import { Youtube, Facebook, Instagram } from 'lucide-react';
-import { Button } from '../components/ui/button';
 
 export const AboutPage = () => {
   return (
@@ -10,7 +9,7 @@ export const AboutPage = () => {
         <div className="text-center mb-16">
           <div className="text-xs tracking-[0.2em] uppercase font-bold text-yellow-400 mb-4">ABOUT US</div>
           <h1 className="text-4xl sm:text-5xl tracking-tighter font-black text-white mb-6">
-            Tabla Recitation Channel
+            Recitation of Tabla Channel
           </h1>
           <p className="text-lg text-neutral-300 max-w-3xl mx-auto leading-relaxed">
             Dedicated to promoting and supporting young and emerging tabla artists worldwide
@@ -18,11 +17,11 @@ export const AboutPage = () => {
         </div>
 
         {/* Mission Statement */}
-        <div className="bg-[#171717] p-8 md:p-12 rounded-sm mb-12">
+        <div className="bg-[#171717] p-8 md:p-12 rounded-2xl mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">Our Mission</h2>
           <div className="space-y-4 text-neutral-300 leading-relaxed">
             <p className="text-lg">
-              We run a <strong className="text-white">Tabla Recitation Channel</strong> with a clear and passionate mission:
+              We run a <strong className="text-white">youtube channel</strong> with a clear and passionate mission:
             </p>
             <ul className="space-y-3 ml-6">
               <li className="flex items-start">
@@ -43,8 +42,8 @@ export const AboutPage = () => {
 
         {/* What We Do */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-          <div className="bg-[#171717] p-8 rounded-sm">
-            <h3 className="text-xl font-bold text-white mb-4">Tabla Recitation Channel</h3>
+          <div className="bg-[#171717] p-8 rounded-2xl">
+            <h3 className="text-xl font-bold text-white mb-4">Recitation of Tabla Channel</h3>
             <p className="text-neutral-300 leading-relaxed mb-4">
               Our YouTube channel features performances, tutorials, and recitations from talented tabla artists around the world. We provide a space for artists to share their craft and connect with audiences who appreciate the beauty of tabla.
             </p>
@@ -53,14 +52,14 @@ export const AboutPage = () => {
               target="_blank" 
               rel="noopener noreferrer"
             >
-              <Button className="bg-yellow-400 text-black hover:bg-yellow-500 rounded-sm font-bold">
-                <Youtube className="w-5 h-5 mr-2" />
+              <button className="btn-gradient px-6 py-3">
+                <Youtube className="w-5 h-5 mr-2 inline" />
                 Visit Our Channel
-              </Button>
+              </button>
             </a>
           </div>
 
-          <div className="bg-[#171717] p-8 rounded-sm">
+          <div className="bg-[#171717] p-8 rounded-2xl">
             <h3 className="text-xl font-bold text-white mb-4">Riyaz Tee Merchandise</h3>
             <p className="text-neutral-300 leading-relaxed mb-4">
               Our merchandise line celebrates the art of tabla and the dedication of practice (Riyaz). Every purchase supports our mission to promote emerging artists and keep the tradition of tabla alive for future generations.
@@ -72,7 +71,7 @@ export const AboutPage = () => {
         </div>
 
         {/* Follow Us */}
-        <div className="bg-gradient-to-r from-yellow-400/10 to-orange-500/10 border border-yellow-400/20 p-8 md:p-12 rounded-sm text-center">
+        <div className="bg-gradient-to-r from-yellow-400/10 to-orange-500/10 border border-yellow-400/20 p-8 md:p-12 rounded-2xl text-center">
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">Follow Our Journey</h2>
           <p className="text-neutral-300 mb-8 max-w-2xl mx-auto">
             Stay connected with us on social media to discover new artists, watch performances, and be part of our community.
@@ -82,7 +81,7 @@ export const AboutPage = () => {
               href="https://www.youtube.com/c/Recitationoftabla" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center space-x-2 bg-[#171717] hover:bg-[#262626] px-6 py-3 rounded-sm transition-colors"
+              className="flex items-center space-x-2 bg-[#171717] hover:bg-[#262626] px-6 py-3 rounded-full transition-colors"
             >
               <Youtube className="w-5 h-5 text-red-500" />
               <span className="text-white font-bold">YouTube</span>
@@ -91,7 +90,7 @@ export const AboutPage = () => {
               href="https://www.facebook.com/recitationoftabla/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center space-x-2 bg-[#171717] hover:bg-[#262626] px-6 py-3 rounded-sm transition-colors"
+              className="flex items-center space-x-2 bg-[#171717] hover:bg-[#262626] px-6 py-3 rounded-full transition-colors"
             >
               <Facebook className="w-5 h-5 text-blue-500" />
               <span className="text-white font-bold">Facebook</span>
@@ -100,7 +99,7 @@ export const AboutPage = () => {
               href="https://www.instagram.com/recitation_of_tabla/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center space-x-2 bg-[#171717] hover:bg-[#262626] px-6 py-3 rounded-sm transition-colors"
+              className="flex items-center space-x-2 bg-[#171717] hover:bg-[#262626] px-6 py-3 rounded-full transition-colors"
             >
               <Instagram className="w-5 h-5 text-pink-500" />
               <span className="text-white font-bold">Instagram</span>

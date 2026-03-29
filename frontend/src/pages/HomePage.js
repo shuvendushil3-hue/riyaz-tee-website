@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import { Button } from '../components/ui/button';
 import axios from 'axios';
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
@@ -24,12 +23,12 @@ export const HomePage = () => {
 
   return (
     <div className="min-h-screen bg-[#0a0a0a]" data-testid="home-page">
-      {/* Hero Section with Pure Tabla Image */}
+      {/* Hero Section with Beautiful Tabla & Harmonium Image */}
       <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1592251615117-33939d5b29fb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzl8MHwxfHNlYXJjaHwzfHx0YWJsYSUyMGRydW1zJTIwaW5kaWFuJTIwcGVyY3Vzc2lvbiUyMGluc3RydW1lbnQlMjBjbG9zZSUyMHVwfGVufDB8fHx8MTc3NDgwNTcxOXww&ixlib=rb-4.1.0&q=85)'
+            backgroundImage: 'url(https://customer-assets.emergentagent.com/job_rhythm-wear-2/artifacts/39hnippp_image.png)'
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black" />
@@ -46,10 +45,10 @@ export const HomePage = () => {
               Wear your passion for music. Supporting young and emerging tabla artists through our platform and merchandise.
             </p>
             <Link to="/products">
-              <Button className="bg-yellow-400 text-black hover:bg-yellow-500 rounded-sm font-bold px-8 py-6 text-base" data-testid="hero-cta-button">
+              <button className="btn-gradient px-8 py-4 text-lg" data-testid="hero-cta-button">
                 SHOP RIYAZ TEE
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
+                <ArrowRight className="ml-2 w-5 h-5 inline" />
+              </button>
             </Link>
           </div>
         </div>
@@ -70,7 +69,7 @@ export const HomePage = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
           {products.map((product) => (
             <Link key={product.id} to={`/product/${product.id}`} className="group" data-testid={`featured-product-${product.id}`}>
-              <div className="relative overflow-hidden bg-[#171717] aspect-[4/5]">
+              <div className="relative overflow-hidden bg-[#171717] aspect-[4/5] rounded-2xl">
                 <img
                   src={product.image}
                   alt={product.name}
@@ -94,7 +93,7 @@ export const HomePage = () => {
               <img
                 src="https://customer-assets.emergentagent.com/job_rhythm-wear-2/artifacts/lbhhc7kd_m%2Ck.png"
                 alt="Dhin Dha Pattern"
-                className="w-full h-[500px] object-contain bg-black p-8"
+                className="w-full h-[500px] object-contain bg-black p-8 rounded-2xl"
               />
             </div>
             <div className="space-y-6">
@@ -103,15 +102,15 @@ export const HomePage = () => {
                 Supporting Tabla Artists
               </h2>
               <p className="text-base leading-relaxed text-neutral-300">
-                We run a Tabla Recitation Channel dedicated to promoting artists, especially young and emerging tabla players. Our mission is to support and showcase talent through our platform.
+                We run a youtube channel dedicated to promoting artists, especially young and emerging tabla players. Our mission is to support and showcase talent through our platform.
               </p>
               <p className="text-base leading-relaxed text-neutral-300">
                 Each piece we create celebrates the journey of mastery and the dedication to the art of tabla. When you wear Riyaz Tee, you're supporting the next generation of artists.
               </p>
               <Link to="/about">
-                <Button className="bg-yellow-400 text-black hover:bg-yellow-500 rounded-sm font-bold">
+                <button className="btn-gradient px-6 py-3">
                   Learn More About Us
-                </Button>
+                </button>
               </Link>
             </div>
           </div>

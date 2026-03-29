@@ -25,7 +25,7 @@
     --border: 0 0% 15%;
     --input: 0 0% 9%;
     --ring: 48 96% 53%;
-    --radius: 0.125rem;
+    --radius: 0.5rem;
   }
 }
 
@@ -41,6 +41,23 @@
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading;
+  }
+}
+
+/* Gradient Button Styles */
+@layer components {
+  .btn-gradient {
+    @apply bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-500 text-black font-bold rounded-full;
+    @apply hover:from-yellow-500 hover:via-orange-500 hover:to-yellow-600;
+    @apply transition-all duration-300 transform hover:scale-105;
+    @apply shadow-lg hover:shadow-xl;
+  }
+  
+  .btn-gradient-green {
+    @apply bg-gradient-to-r from-green-400 via-emerald-500 to-green-500 text-white font-bold rounded-full;
+    @apply hover:from-green-500 hover:via-emerald-600 hover:to-green-600;
+    @apply transition-all duration-300 transform hover:scale-105;
+    @apply shadow-lg hover:shadow-xl;
   }
 }
 
