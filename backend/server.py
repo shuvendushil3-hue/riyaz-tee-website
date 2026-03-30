@@ -297,12 +297,15 @@ async def startup_event():
         await db.products.insert_many(products)
         logging.info(f"Seeded {len(products)} products")
     
-    with open("/app/memory/test_credentials.md", "w") as f:
-        f.write("# Test Credentials for Riyaz Tee\n\n")
-        f.write("## Admin Account\n")
-        f.write(f"- Email: {admin_email}\n")
-        f.write(f"- Password: {admin_password}\n")
-        f.write(f"- Role: admin\n")
+    try:
+        with open("/app/memory/test_credentials.md", "w") as f:
+            f.write("# Test Credentials for Riyaz Tee\n\n")
+            f.write("## Admin Account\n")
+            f.write(f"- Email: {admin_email}\n")
+            f.write(f"- Password: {admin_password}\n")
+            f.write(f"- Role: admin\n")
+    except FileNotFoundError:
+        pass
 
 logging.basicConfig(level=logging.INFO)
 
