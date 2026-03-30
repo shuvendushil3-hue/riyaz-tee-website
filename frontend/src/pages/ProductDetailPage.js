@@ -194,7 +194,7 @@ export const ProductDetailPage = () => {
                 </button>
               ) : (
                 <a
-                  href="https://wa.me/message/IVEZJEEROOUEP1"
+                  href="https://wa.me/919134856341"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-gradient-green w-full py-5 text-lg block text-center"
