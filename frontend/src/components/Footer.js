@@ -12,7 +12,7 @@ export const Footer = () => {
             <img 
               src="https://customer-assets.emergentagent.com/job_rhythm-wear-2/artifacts/eploke4p_logo3.png" 
               alt="Riyaz Tee" 
-              className="h-20 w-auto mb-6"
+              className="h-24 w-auto mb-6"
             />
             <p className="text-sm text-neutral-400 leading-relaxed">
               Promoting young and emerging tabla artists through our platform and merchandise.
