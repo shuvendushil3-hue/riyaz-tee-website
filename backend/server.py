@@ -125,7 +125,7 @@ async def register(user: UserRegister, response: Response):
     
     response.set_cookie(
         key="access_token", value=access_token, httponly=True, 
-        secure=False, samesite="lax", max_age=900, path="/"
+        secure=True, samesite="none", max_age=86400, path="/"
     )
     
     return {"_id": user_id, "email": email, "name": user.name, "role": "user"}
@@ -142,7 +142,7 @@ async def login(credentials: UserLogin, response: Response):
     
     response.set_cookie(
         key="access_token", value=access_token, httponly=True,
-        secure=False, samesite="lax", max_age=900, path="/"
+        secure=True, samesite="none", max_age=86400, path="/"
     )
     
     return {
@@ -229,7 +229,7 @@ app.include_router(api_router)
 app.add_middleware(
     CORSMiddleware,
     allow_credentials=True,
-    allow_origins=os.environ.get('CORS_ORIGINS', '*').split(','),
+    allow_origins=os.environ.get('CORS_ORIGINS', 'https://rhythm-wear-2.preview.emergentagent.com').split(','),
     allow_methods=["*"],
     allow_headers=["*"],
 )
