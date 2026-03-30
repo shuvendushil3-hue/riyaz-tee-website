@@ -57,9 +57,15 @@ export const ProductDetailPage = () => {
       return;
     }
 
-    // Fixed WhatsApp link
     const whatsappLink = 'https://wa.me/message/IVEZJEEROOUEP1';
-    window.open(whatsappLink, '_blank');
+    // Use anchor element to avoid ERR_BLOCKED_BY_RESPONSE
+    const a = document.createElement('a');
+    a.href = whatsappLink;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
     toast.success('Opening WhatsApp...');
   };
 
