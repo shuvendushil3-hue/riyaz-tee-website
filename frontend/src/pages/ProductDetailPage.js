@@ -183,14 +183,27 @@ export const ProductDetailPage = () => {
 
             {/* WhatsApp Order Button */}
             <div className="space-y-3">
-              <button
-                onClick={handleOrderViaWhatsApp}
-                className="btn-gradient-green w-full py-5 text-lg"
-                data-testid="whatsapp-order-button"
-              >
-                <MessageCircle className="w-6 h-6 mr-3 inline" />
-                ORDER VIA WHATSAPP
-              </button>
+              {!selectedSize ? (
+                <button
+                  onClick={() => toast.error('Please select a size')}
+                  className="btn-gradient-green w-full py-5 text-lg"
+                  data-testid="whatsapp-order-button"
+                >
+                  <MessageCircle className="w-6 h-6 mr-3 inline" />
+                  ORDER VIA WHATSAPP
+                </button>
+              ) : (
+                <a
+                  href="https://wa.me/message/IVEZJEEROOUEP1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-gradient-green w-full py-5 text-lg block text-center"
+                  data-testid="whatsapp-order-button"
+                >
+                  <MessageCircle className="w-6 h-6 mr-3 inline" />
+                  ORDER VIA WHATSAPP
+                </a>
+              )}
               <p className="text-center text-sm text-neutral-500">Get instant support on WhatsApp</p>
             </div>
 
