@@ -19,9 +19,9 @@ export const ContactPage = () => {
   };
 
   const handleWhatsApp = () => {
-    const message = `Hi! I'm ${formData.name || 'interested customer'}.\n\n${formData.message || 'I would like to know more about Riyaz Tee.'}`;
-    const whatsappUrl = `https://wa.me/918509643203?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
+    // Fixed WhatsApp link
+    const whatsappLink = 'https://wa.me/message/IVEZJEEROOUEP1';
+    window.open(whatsappLink, '_blank');
   };
 
   const handleSubmit = (e) => {

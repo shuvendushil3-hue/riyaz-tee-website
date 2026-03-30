@@ -32,22 +32,23 @@ export const ProductsPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] py-12" data-testid="products-page">
+    <div className="min-h-screen bg-[#0a0a0a] py-16" data-testid="products-page">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-12">
-          <div className="text-xs tracking-[0.2em] uppercase font-bold text-yellow-400 mb-2" data-testid="products-label">COLLECTION</div>
-          <h1 className="text-4xl sm:text-5xl tracking-tighter font-black text-white" data-testid="products-title">All Products</h1>
+        <div className="mb-16 text-center">
+          <div className="text-xs tracking-[0.3em] uppercase font-bold text-yellow-400 mb-4" data-testid="products-label">COLLECTION</div>
+          <h1 className="text-5xl sm:text-6xl font-black text-white mb-4" data-testid="products-title">All Products</h1>
+          <p className="text-lg text-neutral-400 max-w-2xl mx-auto">Discover our exclusive collection celebrating the art of tabla and dedication</p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12" data-testid="products-grid">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8" data-testid="products-grid">
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
 
         {products.length === 0 && (
-          <div className="text-center py-12">
-            <p className="text-neutral-400" data-testid="no-products-message">No products available.</p>
+          <div className="text-center py-24">
+            <p className="text-neutral-400 text-lg" data-testid="no-products-message">No products available.</p>
           </div>
         )}
       </div>

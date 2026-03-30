@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Star, MessageCircle } from 'lucide-react';
-import { Button } from '../components/ui/button';
 import { Textarea } from '../components/ui/textarea';
 import { useAuth } from '../context/AuthContext';
 import { toast } from 'sonner';
@@ -57,9 +56,10 @@ export const ProductDetailPage = () => {
       return;
     }
 
-    const message = `Hi! I want to order:\n\n*${product.name}*\nSize: ${selectedSize}\nPrice: ₹${product.price}\n\nPlease confirm availability and shipping details.`;
-    const whatsappUrl = `https://wa.me/918509643203?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
+    // Fixed WhatsApp link
+    const whatsappLink = 'https://wa.me/message/IVEZJEEROOUEP1';
+    window.open(whatsappLink, '_blank');
+    toast.success('Opening WhatsApp...');
   };
 
   const handleSubmitReview = async (e) => {
@@ -100,39 +100,45 @@ export const ProductDetailPage = () => {
     : 0;
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] py-12" data-testid="product-detail-page">
+    <div className="min-h-screen bg-[#0a0a0a] py-16" data-testid="product-detail-page">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Product Image */}
-          <div className="bg-[#171717] aspect-square" data-testid="product-image-container">
+          <div className="bg-[#171717] rounded-3xl overflow-hidden aspect-square" data-testid="product-image-container">
             <img
               src={product.image}
               alt={product.name}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
               data-testid="product-detail-image"
             />
           </div>
 
           {/* Product Info */}
-          <div className="space-y-6">
+          <div className="space-y-8">
             <div>
-              <div className="text-xs tracking-[0.2em] uppercase font-bold text-yellow-400 mb-2" data-testid="product-category">
+              <div className="text-xs tracking-[0.3em] uppercase font-bold text-yellow-400 mb-3" data-testid="product-category">
                 {product.category}
               </div>
-              <h1 className="text-4xl sm:text-5xl tracking-tighter font-black text-white mb-4" data-testid="product-detail-name">
+              <h1 className="text-4xl sm:text-5xl font-black text-white mb-6 leading-tight" data-testid="product-detail-name">
                 {product.name}
               </h1>
-              <p className="text-base leading-relaxed text-neutral-300 mb-6" data-testid="product-description">
+              <p className="text-lg leading-relaxed text-neutral-300 mb-8" data-testid="product-description">
                 {product.description}
               </p>
-              <div className="text-3xl font-bold text-yellow-400" data-testid="product-detail-price">
-                ₹{product.price}
+              <div className="flex items-baseline gap-3">
+                <div className="text-4xl font-bold text-yellow-400" data-testid="product-detail-price">
+                  ₹{product.price}
+                </div>
+                <div className="text-lg text-neutral-500 line-through">₹{Math.round(product.price * 1.4)}</div>
+                <div className="px-3 py-1 bg-green-500/20 text-green-400 text-sm font-bold rounded-full">
+                  {Math.round(((product.price * 1.4 - product.price) / (product.price * 1.4)) * 100)}% OFF
+                </div>
               </div>
             </div>
 
             {/* Rating */}
             {reviews.length > 0 && (
-              <div className="flex items-center space-x-2" data-testid="product-rating">
+              <div className="flex items-center gap-3 pb-6 border-b border-neutral-800" data-testid="product-rating">
                 <div className="flex">
                   {[...Array(5)].map((_, i) => (
                     <Star
@@ -141,7 +147,7 @@ export const ProductDetailPage = () => {
                     />
                   ))}
                 </div>
-                <span className="text-neutral-400" data-testid="review-count">
+                <span className="text-neutral-300 font-medium" data-testid="review-count">
                   {avgRating} ({reviews.length} reviews)
                 </span>
               </div>
@@ -149,16 +155,16 @@ export const ProductDetailPage = () => {
 
             {/* Size Selection */}
             <div>
-              <label className="text-sm font-bold text-neutral-300 mb-3 block">SELECT SIZE</label>
-              <div className="flex space-x-3" data-testid="size-selector">
+              <label className="text-sm font-bold text-white mb-4 block uppercase tracking-wide">Select Size</label>
+              <div className="flex gap-3" data-testid="size-selector">
                 {product.sizes.map((size) => (
                   <button
                     key={size}
                     onClick={() => setSelectedSize(size)}
-                    className={`px-6 py-3 rounded-full font-bold transition-all duration-300 transform hover:scale-105 ${
+                    className={`px-8 py-4 rounded-full font-bold transition-all duration-300 ${
                       selectedSize === size
-                        ? 'bg-gradient-to-r from-yellow-400 to-orange-400 text-black shadow-lg'
-                        : 'bg-[#171717] text-neutral-300 hover:bg-[#262626]'
+                        ? 'bg-gradient-to-r from-yellow-400 to-orange-400 text-black shadow-xl scale-110'
+                        : 'bg-[#171717] text-neutral-300 hover:bg-[#262626] border border-neutral-700'
                     }`}
                     data-testid={`size-option-${size}`}
                   >
@@ -169,52 +175,67 @@ export const ProductDetailPage = () => {
             </div>
 
             {/* WhatsApp Order Button */}
-            <button
-              onClick={handleOrderViaWhatsApp}
-              className="btn-gradient-green w-full py-6 text-base"
-              data-testid="whatsapp-order-button"
-            >
-              <MessageCircle className="w-5 h-5 mr-2 inline" />
-              ORDER VIA WHATSAPP
-            </button>
-            <p className="text-center text-xs text-neutral-500">Chat with us on WhatsApp</p>
+            <div className="space-y-3">
+              <button
+                onClick={handleOrderViaWhatsApp}
+                className="btn-gradient-green w-full py-5 text-lg"
+                data-testid="whatsapp-order-button"
+              >
+                <MessageCircle className="w-6 h-6 mr-3 inline" />
+                ORDER VIA WHATSAPP
+              </button>
+              <p className="text-center text-sm text-neutral-500">Get instant support on WhatsApp</p>
+            </div>
+
+            {/* Product Features */}
+            <div className="grid grid-cols-2 gap-4 pt-6">
+              <div className="bg-[#171717] p-4 rounded-2xl">
+                <p className="text-xs text-neutral-400 mb-1">Material</p>
+                <p className="text-sm font-bold text-white">Premium Cotton</p>
+              </div>
+              <div className="bg-[#171717] p-4 rounded-2xl">
+                <p className="text-xs text-neutral-400 mb-1">Shipping</p>
+                <p className="text-sm font-bold text-green-400">Free Delivery</p>
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Reviews Section */}
         <div className="mt-24" data-testid="reviews-section">
-          <h2 className="text-2xl sm:text-3xl tracking-tight font-bold text-white mb-8">Customer Reviews</h2>
+          <h2 className="text-3xl font-black text-white mb-12">Customer Reviews</h2>
 
           {/* Submit Review */}
           {user && user._id && (
-            <form onSubmit={handleSubmitReview} className="bg-[#171717] p-6 rounded-sm mb-8" data-testid="review-form">
-              <h3 className="text-lg font-bold text-white mb-4">Write a Review</h3>
-              <div className="mb-4">
-                <label className="text-sm font-bold text-neutral-300 mb-2 block">Rating</label>
-                <div className="flex space-x-2">
+            <form onSubmit={handleSubmitReview} className="bg-[#171717] p-8 rounded-3xl mb-12" data-testid="review-form">
+              <h3 className="text-xl font-bold text-white mb-6">Write a Review</h3>
+              <div className="mb-6">
+                <label className="text-sm font-bold text-neutral-300 mb-3 block">Rating</label>
+                <div className="flex gap-2">
                   {[1, 2, 3, 4, 5].map((star) => (
                     <button
                       key={star}
                       type="button"
                       onClick={() => setRating(star)}
                       data-testid={`rating-star-${star}`}
+                      className="transition-transform hover:scale-110"
                     >
                       <Star
-                        className={`w-6 h-6 cursor-pointer ${
-                          star <= rating ? 'fill-yellow-400 text-yellow-400' : 'text-neutral-600'
+                        className={`w-8 h-8 cursor-pointer transition-colors ${
+                          star <= rating ? 'fill-yellow-400 text-yellow-400' : 'text-neutral-600 hover:text-neutral-500'
                         }`}
                       />
                     </button>
                   ))}
                 </div>
               </div>
-              <div className="mb-4">
-                <label className="text-sm font-bold text-neutral-300 mb-2 block">Comment</label>
+              <div className="mb-6">
+                <label className="text-sm font-bold text-neutral-300 mb-3 block">Comment</label>
                 <Textarea
                   value={comment}
                   onChange={(e) => setComment(e.target.value)}
                   placeholder="Share your thoughts about this product..."
-                  className="bg-[#0a0a0a] border-[#262626] text-white focus-visible:ring-yellow-400 rounded-sm"
+                  className="bg-[#0a0a0a] border-[#262626] text-white focus-visible:ring-yellow-400 rounded-2xl min-h-[120px]"
                   rows={4}
                   required
                   data-testid="review-comment-input"
@@ -222,7 +243,7 @@ export const ProductDetailPage = () => {
               </div>
               <button
                 type="submit"
-                className="btn-gradient px-6 py-3"
+                className="btn-gradient px-8 py-4"
                 data-testid="submit-review-button"
               >
                 Submit Review
@@ -231,29 +252,34 @@ export const ProductDetailPage = () => {
           )}
 
           {/* Reviews List */}
-          <div className="space-y-6" data-testid="reviews-list">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6" data-testid="reviews-list">
             {reviews.length === 0 ? (
-              <p className="text-neutral-400" data-testid="no-reviews-message">No reviews yet. Be the first to review!</p>
+              <p className="text-neutral-400 col-span-2 text-center py-12" data-testid="no-reviews-message">No reviews yet. Be the first to review!</p>
             ) : (
               reviews.map((review, idx) => (
-                <div key={idx} className="bg-[#171717] p-6 rounded-sm" data-testid={`review-item-${idx}`}>
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="flex items-center space-x-3">
-                      <span className="font-bold text-white" data-testid={`review-user-${idx}`}>{review.user_name}</span>
-                      <div className="flex">
-                        {[...Array(5)].map((_, i) => (
-                          <Star
-                            key={i}
-                            className={`w-4 h-4 ${i < review.rating ? 'fill-yellow-400 text-yellow-400' : 'text-neutral-600'}`}
-                          />
-                        ))}
+                <div key={idx} className="bg-[#171717] p-6 rounded-3xl" data-testid={`review-item-${idx}`}>
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-yellow-400 to-orange-400 flex items-center justify-center text-black font-bold">
+                        {review.user_name?.charAt(0)?.toUpperCase() || 'U'}
+                      </div>
+                      <div>
+                        <span className="font-bold text-white block" data-testid={`review-user-${idx}`}>{review.user_name}</span>
+                        <span className="text-xs text-neutral-500">
+                          {new Date(review.created_at).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}
+                        </span>
                       </div>
                     </div>
-                    <span className="text-sm text-neutral-500">
-                      {new Date(review.created_at).toLocaleDateString()}
-                    </span>
+                    <div className="flex">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className={`w-4 h-4 ${i < review.rating ? 'fill-yellow-400 text-yellow-400' : 'text-neutral-600'}`}
+                        />
+                      ))}
+                    </div>
                   </div>
-                  <p className="text-neutral-300" data-testid={`review-comment-${idx}`}>{review.comment}</p>
+                  <p className="text-neutral-300 leading-relaxed" data-testid={`review-comment-${idx}`}>{review.comment}</p>
                 </div>
               ))
             )}

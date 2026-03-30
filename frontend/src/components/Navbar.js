@@ -16,12 +16,12 @@ export const Navbar = () => {
   return (
     <nav className="sticky top-0 z-50 bg-black/80 backdrop-blur-xl border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-24">
+        <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center">
             <img 
               src="https://customer-assets.emergentagent.com/job_rhythm-wear-2/artifacts/eploke4p_logo3.png" 
               alt="Riyaz Tee" 
-              className="h-20 w-auto"
+              className="h-14 w-auto"
               data-testid="navbar-logo"
             />
           </Link>

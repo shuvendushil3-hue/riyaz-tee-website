@@ -56,29 +56,37 @@ export const HomePage = () => {
 
       {/* Featured Products */}
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-testid="featured-products-section">
-        <div className="flex items-center justify-between mb-12">
+        <div className="flex items-center justify-between mb-16">
           <div>
-            <div className="text-xs tracking-[0.2em] uppercase font-bold text-yellow-400 mb-2">FEATURED</div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl tracking-tight font-bold text-white">Latest Drops</h2>
+            <div className="text-xs tracking-[0.3em] uppercase font-bold text-yellow-400 mb-3">FEATURED</div>
+            <h2 className="text-4xl sm:text-5xl font-black text-white">Latest Drops</h2>
           </div>
-          <Link to="/products" className="text-sm font-medium text-neutral-300 hover:text-yellow-400 transition-colors" data-testid="view-all-link">
+          <Link to="/products" className="text-sm font-bold text-neutral-300 hover:text-yellow-400 transition-colors uppercase tracking-wide" data-testid="view-all-link">
             VIEW ALL →
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product) => (
             <Link key={product.id} to={`/product/${product.id}`} className="group" data-testid={`featured-product-${product.id}`}>
-              <div className="relative overflow-hidden bg-[#171717] aspect-[4/5] rounded-2xl">
+              <div className="relative overflow-hidden bg-[#171717] aspect-[4/5] rounded-3xl mb-4">
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
+                <div className="absolute top-4 right-4">
+                  <span className="px-3 py-1 bg-green-500/90 text-white text-xs font-bold rounded-full backdrop-blur-sm">
+                    {Math.round(((product.price * 1.4 - product.price) / (product.price * 1.4)) * 100)}% OFF
+                  </span>
+                </div>
               </div>
-              <div className="mt-4 space-y-1">
-                <h3 className="font-bold text-base text-neutral-100">{product.name}</h3>
-                <p className="text-yellow-400 font-bold text-lg">₹{product.price}</p>
+              <div className="space-y-2">
+                <h3 className="font-bold text-lg text-neutral-100 group-hover:text-yellow-400 transition-colors">{product.name}</h3>
+                <div className="flex items-baseline gap-2">
+                  <p className="text-yellow-400 font-bold text-xl">₹{product.price}</p>
+                  <p className="text-neutral-500 text-sm line-through">₹{Math.round(product.price * 1.4)}</p>
+                </div>
               </div>
             </Link>
           ))}
